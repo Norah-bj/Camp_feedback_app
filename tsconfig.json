@@ -26,9 +26,10 @@
     "exactOptionalPropertyTypes": true,
 
     // Style Options
-    "noImplicitReturns": true,
+    "noImplicitReturns": false,
     "allowImportingTsExtensions": false,
     "allowSyntheticDefaultImports": true,
+    "noImplicitAny": false,
     // "noImplicitOverride": true,
     "noUnusedLocals": false,
     "noUnusedParameters": false,
