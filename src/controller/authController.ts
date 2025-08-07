@@ -15,8 +15,7 @@ export const login = (req: Request, res: Response) => {
       message: "Logged in successfully",
       token,
       user: {
-        name: user.name,
-        email: user.email,
+        email: user.email
       },
     });
   })(req, res);
