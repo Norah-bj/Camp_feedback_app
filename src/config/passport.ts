@@ -11,7 +11,8 @@ passport.use(
   new LocalStrategy({ usernameField: "email" }, async (email, password, done) => {
     try {
       const user = await User.findOne({ email });
-      if (!user) return done(null, false, { message: "User not found" });
+      if (!user) return done(null, false, { message: "Unauthorised" });
+      //done(error,data,message)
 
       const isMatch = await bcrypt.compare(password, user.password);
       if (!isMatch) return done(null, false, { message: "Wrong password" });
