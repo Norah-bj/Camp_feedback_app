@@ -7,7 +7,7 @@ export const login = (req: Request, res: Response) => {
   passport.authenticate("local", { session: false }, (err, user, info) => {
     if (err || !user) return res.status(401).json({ message: info?.message || "Unauthorised" });
 
-    const token = jwt.sign({ id: user._id, role: user.role, }, process.env.JWT_SECRET as string, {
+    const token = jwt.sign({ id: user._id, role: user.role }, process.env.JWT_SECRET as string, {
       expiresIn: "1h",
     });
 
