@@ -5,6 +5,8 @@ import "./config/passport"
 import passport from "passport";
 import roleRouter from "./routes/role"
 
+console.log("role router loaded");
+
 const app = express()
 app.use(express.json())
 app.use(passport.initialize());

@@ -11,9 +11,10 @@ const userSchema = new mongoose.Schema({
         required: [true, "Password is required"]
     },
     role: {
-        enum: ["Admin", "User"],
-        type: String, required: [true, "Please provide your role"],
-        default: "User"
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "Role",
+        required: [true, "Please provide your role"],
+        default: "Camper"
     }
 })
 

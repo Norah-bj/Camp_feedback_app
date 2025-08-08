@@ -4,11 +4,13 @@ import { Request, Response } from "express";
 
 export const createRole = async(req: Request, res: Response) => {
     try {
-                console.log("=======================================")
+                
+        const role = new Role(req.body);
+        console.log("ROLE DATA: ", req.body);
+        await role.save();
 
-        const { name, description } = req.body;
-
-        if(!name){
+        if(!role.name){
+            console.log("=======================================")
             return res.status(400).json({
                 status:400,
                 message: 'Name is required',
@@ -16,16 +18,9 @@ export const createRole = async(req: Request, res: Response) => {
             })
         }
 
-        const insertRole = new Role({
-            name,
-            description
-        })
-
-        await insertRole.save();
-
         return res.status(201).json({
             status:201,
-            message: 'Role created successfully',
+            message: 'Role create successfully',
             data: null
         })
     } catch (error) {
