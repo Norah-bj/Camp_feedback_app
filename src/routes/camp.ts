@@ -1,12 +1,12 @@
 import express from 'express';
 import { createCamp, getCamps, getCampById, updateCamp, deleteCamp } from '../controller/campController';
 
-const router = express.Router();
+const campRouter = express.Router();
 
-router.post('/camps', createCamp);
-router.get('/camps', getCamps);
-router.get('/camps/:id', getCampById);
-router.put('/camps/:id', updateCamp);
-router.delete('/camps/:id', deleteCamp);
+campRouter.post('/camps', createCamp);
+campRouter.get('/camps', getCamps);
+campRouter.get('/camps/:id', getCampById);
+campRouter.put('/camps/:id', updateCamp);
+campRouter.delete('/camps/:id', deleteCamp);
 
-export default router;
+export default campRouter;

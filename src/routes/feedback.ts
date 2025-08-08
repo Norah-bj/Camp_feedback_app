@@ -8,21 +8,21 @@ import {
   deleteFeedback,
 } from '../controller/feedbackController';
 
-const router = express.Router();
+const feedbackRouter = express.Router();
 
 // Create new feedback
-router.post('/', createFeedback);
+feedbackRouter.post('/', createFeedback);
 
 // Get all feedbacks
-router.get('/', getAllFeedbacks);
+feedbackRouter.get('/', getAllFeedbacks);
 
 // Get feedbacks for a specific camp
-router.get('/camp/:campId', getFeedbacksByCamp);
+feedbackRouter.get('/camp/:campId', getFeedbacksByCamp);
 
 // Update feedback by id
-router.put('/:id', updateFeedback);
+feedbackRouter.put('/:id', updateFeedback);
 
 // Delete feedback by id
-router.delete('/:id', deleteFeedback);
+feedbackRouter.delete('/:id', deleteFeedback);
 
-export default router;
+export default feedbackRouter;
